@@ -8,6 +8,7 @@ import com.masai.exceptions.LoginException;
 import com.masai.exceptions.ProductException;
 import com.masai.model.Cart;
 
+
 public interface CartService {
 	
 	public Cart addProductToCart(Integer productId, int quantity,String key) throws CartException, LoginException, ProductException ;
@@ -19,4 +20,5 @@ public interface CartService {
 	public Cart removeAllProducts(String key) throws CartException, LoginException ;
 	
 	public List<ProductDto> viewAllProducts(String key)  throws CartException, LoginException;
+
 }

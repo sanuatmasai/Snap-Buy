@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -20,7 +21,9 @@ import com.masai.model.Cart;
 import com.masai.service.CartService;
 
 @RestController
+@RequestMapping("/cart")
 public class CartController {
+	
 	@Autowired
 	private CartService ctService;
 	
@@ -71,4 +74,7 @@ public class CartController {
 		
 		return new ResponseEntity<Cart>(cart, HttpStatus.OK);
 	}
+	
+	
+
 }
