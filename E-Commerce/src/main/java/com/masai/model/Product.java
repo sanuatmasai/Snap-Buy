@@ -11,6 +11,8 @@ import javax.persistence.ManyToOne;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.Size;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -41,11 +43,13 @@ public class Product {
 	@Min(value=1, message = "Please enter a valid quantity.")
 	private int quantity;
 	
-	@ManyToOne(cascade = CascadeType.ALL)
+	@JsonIgnore
+	@ManyToOne
 	@JoinColumn(name="cart_id")
 	private Cart cart;
 	
-	@ManyToOne(cascade = CascadeType.ALL)
+	@JsonIgnore
+	@ManyToOne
 	@JoinColumn(name="category_id")
 	private Category category;	
 }
