@@ -1,0 +1,51 @@
+package com.masai.service;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.masai.exceptions.ProductException;
+import com.masai.model.Product;
+
+@Service
+public class ProductServiceImpl implements ProductService {
+	
+	
+
+	@Override
+	public Product addProduct(Product product) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Product updateProduct(Product product) throws ProductException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void removeProduct(int productId) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public List<Product> viewAllProducts() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Product viewProduct(int productId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Product> viewAllProductsByCategory(String categoryName) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

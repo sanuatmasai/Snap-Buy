@@ -1,0 +1,22 @@
+package com.masai.service;
+
+import java.time.LocalDate;
+import java.util.List;
+
+import com.masai.exceptions.AddressException;
+import com.masai.exceptions.OrderException;
+import com.masai.model.Order;
+
+public interface OrderService {
+	
+	public Order addOrder(Order order);
+	public Order updateOrders(Order order)throws OrderException;
+	public Order removeOrders(Order order)throws OrderException;
+	public Order viewOrder(Integer orderId)throws OrderException;
+	
+	public List<Order> viewAllOrders(LocalDate date) throws OrderException ;
+	
+	public List<Order> viewAllOrdersByLocation(String Location) throws OrderException,AddressException ;
+	
+	public List<Order> viewAllOrdersByuserId(String userId) throws OrderException ;
+}

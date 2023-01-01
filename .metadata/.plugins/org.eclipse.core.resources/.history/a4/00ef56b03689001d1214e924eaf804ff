@@ -1,0 +1,18 @@
+package com.masai.model;
+
+import javax.persistence.Entity;
+import javax.validation.constraints.Size;
+
+import lombok.Data;
+
+@Entity
+@Data
+public class Admin extends User {
+	@Size(min = 3, max = 15, message = "The first name should be min 3 and max of 15 characters.")
+	private String firstname;
+	
+	
+	private String lastname;
+	private String phoneNo;
+	private String email;
+}

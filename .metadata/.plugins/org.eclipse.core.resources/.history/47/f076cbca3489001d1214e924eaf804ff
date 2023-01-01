@@ -1,0 +1,10 @@
+package com.masai.model;
+
+import javax.persistence.MappedSuperclass;
+
+@MappedSuperclass
+public interface User {
+
+	@Id
+	private int userId;
+}
