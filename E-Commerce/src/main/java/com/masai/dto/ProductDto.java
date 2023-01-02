@@ -10,6 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.masai.model.Cart;
 
 import lombok.AllArgsConstructor;
@@ -43,6 +44,7 @@ public class ProductDto {
 	
 	private Integer quantity;
 
+	@JsonIgnore
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name="cartId")
 	private Cart cart;

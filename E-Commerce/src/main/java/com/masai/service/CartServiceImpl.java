@@ -73,7 +73,7 @@ public class CartServiceImpl implements CartService{
 			throw new ProductException("Out of stock");
 		}
 		
-		Cart cart = ctDao.findByCustomer(currentCustomer);
+		Cart cart = currentCustomer.getCart();
 		
 		if(cart == null)
 		{
@@ -92,10 +92,10 @@ public class CartServiceImpl implements CartService{
 			
 			product.setQuantity(product.getQuantity() - quantity);
 			list.add(productdto);
+			productdto.setCart(cart);
 			cart.setProduct_list(list);
 			
 			ctDao.save(cart);
-			pDao.save(product);
 			
 			return cart;
 			
@@ -116,10 +116,11 @@ public class CartServiceImpl implements CartService{
 			product.setQuantity(product.getQuantity() - quantity);
 			
 			list.add(productDto);
+			
+			productDto.setCart(cart);
 			cart.setProduct_list(list);
 			
 			ctDao.save(cart) ;
-			pDao.save(product);
 			 
 			return cart;
 		}
